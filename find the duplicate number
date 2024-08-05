@@ -1,0 +1,25 @@
+class Solution {
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i]; 
+        arr[i] = arr[j];   
+        arr[j] = temp;   
+    }
+
+    public int findDuplicate(int[] nums) {
+        int slow = nums[0];
+        int fast = nums[0];
+        while (true) {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+            if (slow == fast) {
+                break;
+            }
+        }
+        slow = nums[0];
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return slow;
+    }
+}
