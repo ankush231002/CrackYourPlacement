@@ -1,0 +1,17 @@
+import java.math.BigInteger;
+class Solution {
+    public String decimalToBinary(BigInteger a){
+        return a.toString(2);
+    }
+    public BigInteger binaryToDecimal(String a){
+        return new BigInteger(a,2);
+    }
+    public String addBinary(String a, String b) {
+        BigInteger no1 = binaryToDecimal(a);
+        BigInteger no2 = binaryToDecimal(b);
+
+        BigInteger sum = no1.add(no2);
+
+        return decimalToBinary(sum);
+    }
+}
