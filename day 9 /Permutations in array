@@ -1,0 +1,22 @@
+import java.util.Arrays;
+
+class Solution {
+    public boolean checkPermutations(int k, int[] arr1, int[] arr2) {
+        int n = arr1.length;
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        for (int i = 0; i < n / 2; i++) {
+            int temp = arr2[i];
+            arr2[i] = arr2[n - 1 - i];
+            arr2[n - 1 - i] = temp;
+        }
+
+        for (int i = 0; i < n; i++) {
+            if (arr1[i] + arr2[i] < k) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
