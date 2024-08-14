@@ -1,0 +1,35 @@
+class Node {
+    int data;
+    Node next;
+    Node(int new_data) {
+        data = new_data;
+        next = null;
+    }
+}
+
+public class GFG {
+    public static void sortList(Node head) {
+      int arr[] = {0,0,0};
+      Node temp = head;
+
+      whlel(temp != null){
+        arr[temp.data]++;
+        temp = temp.next;
+      }
+
+      int index =0;
+      temp = head;
+
+      while(temp != null){
+        if(arr[temp.data] == 0){
+          index++;
+        }
+        else{
+          temp.data = index;
+          arr[index]--;
+          temp = temp.next;
+      }
+      
+        
+        }
+    }
